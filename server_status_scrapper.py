@@ -43,7 +43,7 @@ def main():
         servers_to_parse = [i.strip() for i in open(args.server).readlines()]
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
-            future_to_url = {executor.submit(fetch_status, url, 60): url for url in servers_to_parse}
+            future_to_url = {executor.submit(fetch_status, url, 2): url for url in servers_to_parse}
             for future in concurrent.futures.as_completed(future_to_url):
                 url = future_to_url[future]
                 try:
