@@ -47,61 +47,69 @@ optional arguments:
 ### Examples
 - Generating a table: 
 ```bash
-ᐅ python server_status_scrapper.py -s example.txt -t
-  Application  Error_Count  Request_Count  Success_Count      Uptime Version
-0      Cache0    905551894     1722952160      817400266  4029194611   0.2.0
-1      Cache1    905551894     1722952160      817400266  4029194611   0.2.0
-2      Cache2    905551894     1722952160      817400266  4029194611   0.2.0
-3      Cache3    905551894     1722952160      817400266  4029194611   0.2.0
+ ᐅ python server_status_scrapper.py -s example.txt -t
+2019-08-07 23:17:04,785 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:04,788 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:04,789 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:04,791 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:04,792 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:04,799 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:04,803 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:04,806 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:04,807 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:04,808 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:04,808 - ERROR - localhost:500 returned HTTPConnectionPool(host='localhost', port=500): Max retries exceeded with url: /status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x113619110>: Failed to establish a new connection: [Errno 61] Connection refused'))
 
-{'Cache4': 'ConnectionError', 'server-0022': 'ConnectionError'}
+Status report of servers: 
+   Application  Error_Count  Request_Count  Success_Count      Uptime Version
+0      Cache0    905551894     1722952160      817400266  4029194611   0.2.0
+1      Cache0    905551894     1722952160      817400266  4029194611   0.2.0
+2      Cache0    905551894     1722952160      817400266  4029194611   0.2.0
+3      Cache0    905551894     1722952160      817400266  4029194611   0.2.0
+4      Cache0    905551894     1722952160      817400266  4029194611   0.2.0
+5      Cache0    905551894     1722952160      817400266  4029194611   0.2.0
+6      Cache0    905551894     1722952160      817400266  4029194611   0.2.0
+7      Cache0    905551894     1722952160      817400266  4029194611   0.2.0
+8      Cache0    905551894     1722952160      817400266  4029194611   0.2.0
+9      Cache0    905551894     1722952160      817400266  4029194611   0.2.0 
 ```
 
 - Generating json output:
 ```bash
-ᐅ python server_status_scrapper.py -s example.txt -j | jq .
-[
-  {
-    "Application": "Cache0",
-    "Error_Count": 905551894,
-    "Request_Count": 1722952160,
-    "Success_Count": 817400266,
-    "Uptime": 4029194611,
-    "Version": "0.2.0"
-  },
-  {
-    "Application": "Cache0",
-    "Error_Count": 905551894,
-    "Request_Count": 1722952160,
-    "Success_Count": 817400266,
-    "Uptime": 4029194611,
-    "Version": "0.2.0"
-  }
-]
+ ᐅ python server_status_scrapper.py -s example.txt -j
+2019-08-07 23:17:32,316 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:32,319 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:32,321 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:32,324 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:32,326 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:32,333 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:32,342 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:32,342 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:32,342 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:32,343 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:32,344 - ERROR - localhost:500 returned HTTPConnectionPool(host='localhost', port=500): Max retries exceeded with url: /status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1184c9350>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+Json format data from server status: 
+ [{"Application": "Cache0", "Error_Count": 905551894, "Request_Count": 1722952160, "Success_Count": 817400266, "Uptime": 4029194611, "Version": "0.2.0"}, {"Application": "Cache0", "Error_Count": 905551894, "Request_Count": 1722952160, "Success_Count": 817400266, "Uptime": 4029194611, "Version": "0.2.0"}, {"Application": "Cache0", "Error_Count": 905551894, "Request_Count": 1722952160, "Success_Count": 817400266, "Uptime": 4029194611, "Version": "0.2.0"}, {"Application": "Cache0", "Error_Count": 905551894, "Request_Count": 1722952160, "Success_Count": 817400266, "Uptime": 4029194611, "Version": "0.2.0"}, {"Application": "Cache0", "Error_Count": 905551894, "Request_Count": 1722952160, "Success_Count": 817400266, "Uptime": 4029194611, "Version": "0.2.0"}, {"Application": "Cache0", "Error_Count": 905551894, "Request_Count": 1722952160, "Success_Count": 817400266, "Uptime": 4029194611, "Version": "0.2.0"}, {"Application": "Cache0", "Error_Count": 905551894, "Request_Count": 1722952160, "Success_Count": 817400266, "Uptime": 4029194611, "Version": "0.2.0"}, {"Application": "Cache0", "Error_Count": 905551894, "Request_Count": 1722952160, "Success_Count": 817400266, "Uptime": 4029194611, "Version": "0.2.0"}, {"Application": "Cache0", "Error_Count": 905551894, "Request_Count": 1722952160, "Success_Count": 817400266, "Uptime": 4029194611, "Version": "0.2.0"}, {"Application": "Cache0", "Error_Count": 905551894, "Request_Count": 1722952160, "Success_Count": 817400266, "Uptime": 4029194611, "Version": "0.2.0"}] 
 ```
 
 - Generating json parseable file:
 ```bash
- ᐅ python server_status_scrapper.py -s example.txt -f
- ᐅ cat status_report.txt | jq . 
-[
-  {
-    "Application": "Cache0",
-    "Error_Count": 905551894,
-    "Request_Count": 1722952160,
-    "Success_Count": 817400266,
-    "Uptime": 4029194611,
-    "Version": "0.2.0"
-  },
-  {
-    "Application": "Cache0",
-    "Error_Count": 905551894,
-    "Request_Count": 1722952160,
-    "Success_Count": 817400266,
-    "Uptime": 4029194611,
-    "Version": "0.2.0"
-  }
-]
+  ᐅ python server_status_scrapper.py -s example.txt -f
+2019-08-07 23:17:38,443 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:38,445 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:38,450 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:38,450 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:38,451 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:38,460 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:38,462 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:38,468 - ERROR - localhost:500 returned HTTPConnectionPool(host='localhost', port=500): Max retries exceeded with url: /status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10dd7d110>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2019-08-07 23:17:38,470 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:38,470 - INFO - connecting to from localhost:5000
+2019-08-07 23:17:38,471 - INFO - connecting to from localhost:5000
+
+Json format file is saved to /Users/sahnawaz/code/server_status_report/status_report.txt 
+
 ```
 
 ### Testing
