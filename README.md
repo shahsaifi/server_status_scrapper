@@ -20,6 +20,9 @@ Python 3.7.4
 - [pandas](https://pypi.org/project/pandas/)
 - [pytest](https://pypi.org/project/pytest/)
 - [requests-mock](https://pypi.org/project/requests-mock/)
+- [concurrent.futures](https://docs.python.org/3/library/concurrent.futures.html)
+- [os](https://docs.python.org/3/library/os.html)
+- [logging](https://docs.python.org/3/library/logging.html)
 
 #### installing above modules
 ```bash
